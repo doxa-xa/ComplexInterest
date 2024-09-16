@@ -24,10 +24,10 @@ class ComplexInterest:
         rep = {
                 "period":{
                     "start":self.period[0],
-                    'end':self.period[1],
-                    'monthly investment':self.year_investment/12,
-                    'averate yearly interest rate':self.percent_interest*100
+                    'end':self.period[1]
                 },
+                'monthly investment':self.year_investment/12,
+                'averate yearly interest rate':self.percent_interest*100,
                 "yearly":[]
               }
         for y in range(1,years+1):
@@ -54,9 +54,9 @@ class ComplexInterest:
         return {'total invetment':self.total_invested,
                 'total profit':self.total_profit}
 
-cx_interest = ComplexInterest(1000,(dt.date(2024,9,16),dt.date(2031,9,16)),0.10)
+# cx_interest = ComplexInterest(1000,(dt.date(2024,9,16),dt.date(2031,9,16)),0.10)
 
-report = cx_interest.report()
-print(report['yearly'])
-totals = cx_interest.totals()
-print(totals)
+# report = cx_interest.report()
+# print(report['yearly'])
+# totals = cx_interest.totals()
+# print(totals)

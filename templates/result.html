@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Interest - Results</title>
+</head>
+<body>
+    <h1>Estimation:</h1>
+    <a href="/">Back</a>
+    <ul>
+        <li>From: {{ data['period']['start'].strftime("%d.%m.%Y") }}</li>
+        <li>To: {{ data['period']['end'].strftime("%d.%m.%Y") }}</li>
+        <li>Average yearly interest rate:{{ data['average yearly interest rate'] }} %</li>
+        <li>Montly investment: {{ data['monthly investment'] }} $</li>
+    </ul>
+    <table>
+        <tr>
+            <th>Year</th>
+            <th>Invested</th>
+            <th>Profit</th>
+            <th>Total</th>
+        </tr>
+        {% for item in data['yearly'] %}
+        <tr>
+            <td>{{ item['year'] }}</td>
+            <td>{{ item['invested'] }} $</td>
+            <td>{{ item['profit'] }} $</td>
+            <td>{{ item['current'] }} $</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
