@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='main.css') }}">
     <title>Complex Interest Calculator</title>
 </head>
 <body>
-    <h1>Complex Interest Calculator</h1><br>
+    <h1>Complex Interest Calculator</h1>
     <form action="/" method="post">
-        <label for="from">From:</label>
+        <label for="from",id="label_from">From:</label>
         <input type="date" name="from" id="from">
-        <label for="to">To:</label>
+        <label for="to" id="label_to">To:</label>
         <input type="date" name="to" id="to">
-        <label for="investment">Montly Investment</label>
+        <label for="investment" id="label_investment">Montly Investment</label>
         <input type="number" name="investment" id="investment">
-        <label for="interest">Average yearly interest rate</label>
+        <label for="interest" id="label_interest">Average yearly interest rate</label>
         <input type="number" name="interest" id="interest" min="0" max="100">
-        <input type="submit" value="Calculate">
+        <input type="submit" id="button_submit" value="Calculate">
     </form>
 </body>
 </html>

@@ -1,0 +1,75 @@
+*{
+    border: 1px dotted green;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-rows: 30%, 70%;
+}
+h1{
+    grid-row: 1/1;
+    margin-bottom: 2%;
+    text-align: left;
+}
+form{
+    display: grid;
+    grid-row: 2/2;
+    grid-template-columns: 50%,50%;
+    grid-template-rows: 20%,20%,20%,20%,20%;
+    max-width: 25%;
+}
+label{
+    text-align: right;
+    padding-right: 2%;
+    padding-bottom: 1%;
+}
+input{
+    margin-bottom: 1%;
+    margin-right: 25%;
+}
+#label_from{
+    grid-column: 1/1;
+    grid-row: 1/1
+}
+#label_to{
+    grid-column: 1/1;
+    grid-row: 2/2;
+}
+#label_investment{
+    grid-column: 1/1;
+    grid-row: 3/3;
+}
+#label_interest{
+    grid-column: 1/1;
+    grid-row: 4/4;
+}
+#button_submit{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 5/5;
+    margin-left: 1%;
+    margin-top: 2%;
+    width: 100%;
+    background-color: lightcoral;
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+#from{
+    grid-column: 2/2;
+    grid-row: 1/1;
+}
+#to{
+    grid-column: 2/2;
+    grid-row: 2/2;
+}
+#investment{
+    grid-column: 2/2;
+    grid-row: 3/3;
+}
+#interest{
+    grid-column: 2/2;
+    grid-row: 4/4;
+}
