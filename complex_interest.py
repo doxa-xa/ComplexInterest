@@ -60,3 +60,57 @@ class ComplexInterest:
 # print(report['yearly'])
 # totals = cx_interest.totals()
 # print(totals)
+
+class FinFormulas:
+    def __init__(self,assets:float,liabilities:float,equity:float) -> None:
+        self._assets = assets
+        self._liabilities = liabilities
+        self._equity = equity
+    
+    @staticmethod
+    def net_income(revenue:float,expenses:float) -> float:
+        return revenue-expenses
+    
+    @property
+    def liability(self)->float:
+        return self._assets - self._equity
+    
+    @property
+    def equity(self) -> float:
+        return self._assets - self._liabilities
+
+    @property
+    def assets(self) -> float:
+        return self._liabilities + self._equity
+    
+    @property
+    def current_ratio(self) -> float:
+        return self._assets/self._liabilities
+    
+    @staticmethod
+    def cost_of_goods_sold(initial_inventory:float, purchased:float, end_inventory:float) -> float:
+        return initial_inventory + purchased - end_inventory
+    
+    @staticmethod
+    def break_even_point(fixed_costs:float,sales_price_per_unit:float,variable_cost_per_unit:float) -> float:
+        return fixed_costs/(sales_price_per_unit - variable_cost_per_unit)
+    
+    @staticmethod
+    def ROI(gain:float,cost:float) -> float:
+        return ((gain-cost)/cost)*100
+    
+    @staticmethod
+    def profit_margin(net_income:float,revenue:float) -> float:
+        return (net_income/revenue)*100
+    
+    @staticmethod
+    def markup_percentage(revenue:float,cogs:float) ->float:
+        return ((revenue-cogs)/cogs)*100
+    
+    @staticmethod
+    def selling_price_using_markup(cogs:float, markup_percentage:float) -> float:
+        return (cogs*markup_percentage)+cogs
+    
+    @staticmethod
+    def inventory_shrinkage(recorded_inventory:float, actual_inventory:float) -> float:
+        return ((recorded_inventory - actual_inventory)/recorded_inventory)*100
